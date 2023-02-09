@@ -12,6 +12,7 @@ export const StyledNewsTimestamp = styled.span`
 	width: 90%;
 	display: inline-block;
 	padding: 3px 0 0px 5px;
+	width: 100%;
 `;
 
 export const StyledNewsTitle = styled.span`

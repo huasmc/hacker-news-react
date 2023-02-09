@@ -1,5 +1,6 @@
 import { memo } from "react";
 import Clock from "../../../assets/clock.svg";
+import formatNewsHour from "../../../utils/formatNewsHour";
 import {
 	StyledNewsItemContainer,
 	StyledNewsTimestamp,
@@ -16,7 +17,9 @@ const NewsFeedItem = ({ newsHit }) => {
 							<img src={Clock} alt="" />
 						</td>
 						<td className="news-timestamp">
-							<StyledNewsTimestamp>{newsHit.created_at_i}</StyledNewsTimestamp>
+							<StyledNewsTimestamp>
+								{formatNewsHour(newsHit.created_at_i)}
+							</StyledNewsTimestamp>
 						</td>
 					</tr>
 				</tbody>
