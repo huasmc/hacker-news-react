@@ -4,6 +4,8 @@ export const Row = styled.div`
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
 	grid-gap: 1rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
 `;
 
 export const Col = styled.div`

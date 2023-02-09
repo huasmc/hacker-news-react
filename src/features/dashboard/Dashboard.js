@@ -2,6 +2,7 @@ import { memo, useState } from "react";
 import { Col, Row } from "../../common/styled";
 import TabButton from "../../common/tabButton/TabButton";
 import { UI_STRINGS } from "../../common/UI_STRINGS";
+import NewsFeed from "../newsFeed/NewsFeed";
 import { DashboardContainer } from "./style";
 
 const Dashboard = () => {
@@ -22,6 +23,7 @@ const Dashboard = () => {
 					</div>
 				</Col>
 			</Row>
+			<NewsFeed />
 		</DashboardContainer>
 	);
 };
