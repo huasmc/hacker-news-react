@@ -1,19 +1,20 @@
 import { memo, useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Col, Row } from "../../common/styled";
 import TabButton from "../../common/tabButton/TabButton";
 import { UI_STRINGS } from "../../common/UI_STRINGS";
 import NewsFeed from "../newsFeed/NewsFeed";
-import { fetchNews } from "./DashboardSlice";
+import { fetchNews, selectNews } from "./DashboardSlice";
 import { DashboardContainer } from "./style";
 
 const Dashboard = () => {
 	const [activeTab, setActiveTab] = useState(UI_STRINGS.TAB_BUTTON.ALL);
+	const news = useSelector(selectNews);
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		dispatch(fetchNews({ query: "angular", page: 0 }));
-	}, []);
+		dispatch(fetchNews({ query: "angular", page: 0, hitsPerPage: 8 }));
+	}, [dispatch]);
 
 	return (
 		<DashboardContainer>
@@ -31,7 +32,7 @@ const Dashboard = () => {
 					</div>
 				</Col>
 			</Row>
-			<NewsFeed />
+			<NewsFeed news={news} />
 		</DashboardContainer>
 	);
 };
