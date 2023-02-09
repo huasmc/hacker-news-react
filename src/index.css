@@ -17,3 +17,7 @@ code {
 	justify-content: center;
 	align-items: center;
 }
+
+.favorite-button {
+	width: 1.5rem;
+}

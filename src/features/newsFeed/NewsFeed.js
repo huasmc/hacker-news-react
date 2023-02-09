@@ -4,7 +4,7 @@ import NewsFeedItem from "./components/NewsFeedItem";
 
 const NewsFeed = ({ news }) => {
 	return (
-		<div style={{ margin: "0 9.375rem 0 9.375rem" }}>
+		<div>
 			<Row span={12}>
 				<Col span={6}>
 					{Array.isArray(news) &&

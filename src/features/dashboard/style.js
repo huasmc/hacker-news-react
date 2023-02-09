@@ -7,3 +7,11 @@ export const DashboardContainer = styled.div`
 	padding: 0 0 6.125rem;
 	background-color: #fcfcfc;
 `;
+
+export const TabButtonContainerStyles = {
+	paddingTop: "60px",
+	paddingBottom: "60px",
+	justifyContent: "center",
+	alignItems: "center",
+	display: "flex",
+};

@@ -29,17 +29,24 @@ export const StyledNewsTitle = styled.span`
 `;
 
 export const StyledNewsItemContainer = styled.div`
-	width: 90%;
-	height: 53px;
-	margin: 0 0 1.875rem 0;
-	padding: 1.625rem;
-	opacity: 0.8;
+	--auto-grid-min-size: 16rem;
+	display: inline-grid;
+	border: 1px solid #c1c1c1;
 	border-radius: 6px;
-	border: solid 1px #979797;
-	background-color: #fff;
+	margin: 0 0 1.875rem 0;
+`;
 
-	@media (max-width: 768px) {
-		width: 67vw;
-		height: 13vw;
-	}
+export const StyledNewsItemData = styled.div`
+	padding: 1.625rem 0 1.625rem 1.625rem;
+`;
+
+export const StyledFavoriteButtonContainer = styled.div`
+	height: 100%;
+	background: #f5f5f5;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-right: 1px solid #c1c1c1;
+	border-radius: 6px;
 `;

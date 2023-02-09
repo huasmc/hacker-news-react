@@ -17,8 +17,6 @@ export const Row = styled.div`
 export const Col = styled.div`
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	justify-content: center;
 	padding-left: 0.5rem;
 	padding-right: 0.5rem;
 	grid-column: span ${(props) => props.span};

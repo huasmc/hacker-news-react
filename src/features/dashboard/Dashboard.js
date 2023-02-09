@@ -5,7 +5,7 @@ import TabButton from "../../common/tabButton/TabButton";
 import { UI_STRINGS } from "../../common/UI_STRINGS";
 import NewsFeed from "../newsFeed/NewsFeed";
 import { fetchNews, selectNews } from "./DashboardSlice";
-import { DashboardContainer } from "./style";
+import { DashboardContainer, TabButtonContainerStyles } from "./style";
 
 const Dashboard = () => {
 	const [activeTab, setActiveTab] = useState(UI_STRINGS.TAB_BUTTON.ALL);
@@ -20,7 +20,7 @@ const Dashboard = () => {
 		<DashboardContainer>
 			<Row>
 				<Col span={12}>
-					<div style={{ paddingTop: "60px", paddingBottom: "60px" }}>
+					<div style={TabButtonContainerStyles}>
 						<TabButton
 							options={[
 								UI_STRINGS.TAB_BUTTON.ALL,
