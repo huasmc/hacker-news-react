@@ -28,7 +28,9 @@ const Dropdown = ({ selected, setSelected, placeholder, options }) => {
 								</td>
 							</tr>
 						) : (
-							placeholder
+							<tr>
+								<td>{placeholder}</td>
+							</tr>
 						)}
 					</tbody>
 				</table>

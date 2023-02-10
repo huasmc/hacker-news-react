@@ -1,6 +1,12 @@
-import { memo } from "react";
+import { memo, useEffect, useState } from "react";
 import Clock from "../../../assets/clock.svg";
 import HeartFilled from "../../../assets/heart-filled.svg";
+import HeartUnfilled from "../../../assets/heart-unfilled.svg";
+import {
+	LSisInFavorites,
+	LSRemoveFavorite,
+	LSAddFavorite,
+} from "../../../service/localStorageService";
 import formatNewsHour from "../../../utils/formatNewsHour";
 import {
 	StyledFavoriteButtonContainer,
@@ -11,8 +17,24 @@ import {
 } from "./style";
 
 const NewsFeedItem = ({ newsHit }) => {
+	const [update, setUpdate] = useState(false);
+
 	const openNewsLink = () => {
 		window.open(newsHit.story_url, "_blank");
+	};
+
+	const isInFavorites = () => {
+		return LSisInFavorites(newsHit);
+	};
+
+	const removeFavorite = () => {
+		LSRemoveFavorite(newsHit);
+		setUpdate(!update);
+	};
+
+	const onFavorite = () => {
+		LSAddFavorite(newsHit);
+		setUpdate(!update);
 	};
 
 	return (
@@ -36,7 +58,21 @@ const NewsFeedItem = ({ newsHit }) => {
 					<StyledNewsTitle> {newsHit.story_title}</StyledNewsTitle>
 				</StyledNewsItemData>
 				<StyledFavoriteButtonContainer>
-					<img className="favorite-button" src={HeartFilled} alt="" />
+					{isInFavorites() ? (
+						<img
+							className="favorite-button"
+							src={HeartFilled}
+							alt=""
+							onClick={removeFavorite}
+						/>
+					) : (
+						<img
+							className="favorite-button"
+							src={HeartUnfilled}
+							alt=""
+							onClick={onFavorite}
+						/>
+					)}
 				</StyledFavoriteButtonContainer>
 			</div>
 		</StyledNewsItemContainer>
