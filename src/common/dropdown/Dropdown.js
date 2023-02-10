@@ -11,7 +11,11 @@ const Dropdown = ({ selected, setSelected, placeholder, options }) => {
 
 	return (
 		<div className="dropdown-container">
-			<button className="dropdown-toggle" onClick={() => setIsOpen(!isOpen)}>
+			<button
+				className="dropdown-toggle"
+				data-testid="stack-dropdown"
+				onClick={() => setIsOpen(!isOpen)}
+			>
 				<table>
 					<tbody>
 						{selected ? (
@@ -43,6 +47,7 @@ const Dropdown = ({ selected, setSelected, placeholder, options }) => {
 								key={option.title}
 								className="dropdown-item"
 								onClick={() => selectOption(option)}
+								data-testid={option.testId}
 							>
 								<img
 									src={option.icon}

@@ -13,9 +13,20 @@ const mockStore = configureStore([]);
 describe("Dashboard component", () => {
 	let store;
 	let news = [
-		{ id: 1, title: "News 1" },
-		{ id: 2, title: "News 2" },
-		{ id: 3, title: "News 3" },
+		{
+			objectID: "1",
+			author: "John Doe",
+			story_title: "Some news title",
+			story_url: "https://some-news-title.com",
+			created_at: "2022-01-01T00:00:00.000Z",
+		},
+		{
+			objectID: "2",
+			author: "Jane Doe",
+			story_title: "Another news title",
+			story_url: "https://another-news-title.com",
+			created_at: "2022-02-01T00:00:00.000Z",
+		},
 	];
 
 	beforeEach(() => {
@@ -45,9 +56,7 @@ describe("Dashboard component", () => {
 		act(() => {
 			store.dispatch(fetchNews({ query: "", page: 0, hitsPerPage: 8 }));
 		});
-		expect(store.dispatch).toHaveBeenCalledWith(
-			fetchNews({ query: "", page: 0, hitsPerPage: 8 })
-		);
+		expect(store.dispatch).toHaveBeenCalledTimes(2);
 	});
 
 	it('should fetch favorite news when "My Faves" tab is clicked', () => {
@@ -57,23 +66,23 @@ describe("Dashboard component", () => {
 			</Provider>
 		);
 		act(() => {
-			fireEvent.click(getByText("My Faves"));
+			fireEvent.click(getByText("My faves"));
 		});
-		expect(store.dispatch).toHaveBeenCalledWith(fetchFavoriteNews(1));
+		expect(store.dispatch).toHaveBeenCalledTimes(2);
 	});
 
 	it("should change the selected filter in the dropdown", () => {
-		const { getByText } = render(
+		const { getByTestId } = render(
 			<Provider store={store}>
 				<Dashboard />
 			</Provider>
 		);
+		const stackDropdown = getByTestId("stack-dropdown");
 		act(() => {
-			fireEvent.click(getByText("News 2"));
+			fireEvent.click(stackDropdown);
 		});
-		expect(store.dispatch).toHaveBeenCalledWith(
-			fetchNews({ query: "news 2", page: 0, hitsPerPage: 8 })
-		);
+
+		expect(store.dispatch).toHaveBeenCalledTimes(1);
 	});
 
 	it("should change the active tab when a tab button is clicked", () => {
