@@ -3,10 +3,7 @@ import { render, fireEvent, act } from "@testing-library/react";
 import { Provider } from "react-redux";
 import configureStore from "redux-mock-store";
 import Dashboard from "../features/dashboard/Dashboard";
-import {
-	fetchNews,
-	fetchFavoriteNews,
-} from "../features/dashboard/DashboardSlice";
+import { fetchNews } from "../features/dashboard/DashboardSlice";
 
 const mockStore = configureStore([]);
 
