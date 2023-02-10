@@ -28,3 +28,7 @@ export const LSRemoveFavorite = (newsHit) => {
 		localStorage.setItem("favorites", JSON.stringify(newFavorites));
 	}
 };
+
+export const LSGetFavorites = () => {
+	return JSON.parse(localStorage.getItem("favorites"));
+};

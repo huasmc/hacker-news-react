@@ -5,8 +5,9 @@ import Dropdown from "../../common/dropdown/Dropdown";
 import { Col, Row } from "../../common/styled";
 import TabButton from "../../common/tabButton/TabButton";
 import { UI_STRINGS } from "../../common/UI_STRINGS";
+import { LSGetFavorites } from "../../service/localStorageService";
 import NewsFeed from "../newsFeed/NewsFeed";
-import { fetchNews, selectNews } from "./DashboardSlice";
+import { fetchFavoriteNews, fetchNews, selectNews } from "./DashboardSlice";
 import { DashboardContainer, TabButtonContainerStyles } from "./style";
 
 const Dashboard = () => {
@@ -17,14 +18,20 @@ const Dashboard = () => {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		dispatch(
-			fetchNews({
-				query: selected && selected.title.toLowerCase(),
-				page,
-				hitsPerPage: 8,
-			})
-		);
-	}, [page, selected, dispatch]);
+		if (activeTab === UI_STRINGS.TAB_BUTTON.ALL) {
+			dispatch(
+				fetchNews({
+					query: selected && selected.title.toLowerCase(),
+					page,
+					hitsPerPage: 8,
+				})
+			);
+		} else {
+			dispatch(fetchFavoriteNews(page + 1));
+		}
+	}, [page, selected, activeTab, dispatch]);
+
+	useEffect(() => setPage(0), [activeTab]);
 
 	return (
 		<DashboardContainer>
@@ -42,19 +49,26 @@ const Dashboard = () => {
 					</div>
 				</Col>
 			</Row>
-			<Row>
-				<Col>
-					<div style={{ padding: "0 0 3vw 10vw" }}>
-						<Dropdown
-							placeholder={UI_STRINGS.DROPDOWN.PLACEHOLDER}
-							selected={selected}
-							setSelected={setSelected}
-							options={StackDropdownConfig}
-						/>
-					</div>
-				</Col>
-			</Row>
-			<NewsFeed news={news} page={page} setPage={setPage} />
+			{/* {activeTab === UI_STRINGS.TAB_BUTTON.ALL && ( */}
+			<div>
+				<Row>
+					<Col>
+						<div style={{ padding: "0 0 3vw 10vw" }}>
+							<Dropdown
+								placeholder={UI_STRINGS.DROPDOWN.PLACEHOLDER}
+								selected={selected}
+								setSelected={setSelected}
+								options={StackDropdownConfig}
+							/>
+						</div>
+					</Col>
+				</Row>
+				<NewsFeed news={news} page={page} setPage={setPage} />
+			</div>
+			{/* )} */}
+			{/* {activeTab === UI_STRINGS.TAB_BUTTON.MY_FAVES && (
+				<NewsFeed news={getFavorites()} page={page} setPage={setPage} />
+			)} */}
 		</DashboardContainer>
 	);
 };
