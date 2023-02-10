@@ -9,4 +9,5 @@ export const UI_STRINGS = {
 	DROPDOWN: {
 		PLACEHOLDER: "Select your news",
 	},
+	NO_VALID_NEWS: "This page has no valid news",
 };

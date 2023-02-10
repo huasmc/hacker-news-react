@@ -1,5 +1,6 @@
 import { memo } from "react";
 import { Col, Row } from "../../common/styled";
+import { UI_STRINGS } from "../../common/UI_STRINGS";
 import NewsFeedItem from "./components/NewsFeedItem";
 import NewsFeedPagination from "./components/NewsFeedPagination";
 import {
@@ -14,6 +15,11 @@ const NewsFeed = ({ news, page, setPage }) => {
 	return (
 		<div>
 			<Row span={12}>
+				{Array.isArray(news) && news.length === 0 && (
+					<Row>
+						<h2>{UI_STRINGS.NO_VALID_NEWS}</h2>
+					</Row>
+				)}
 				<StyledNewsFeedContainerLeft>
 					<Col span={6}>
 						{Array.isArray(news) &&
