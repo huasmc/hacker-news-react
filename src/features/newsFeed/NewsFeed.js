@@ -2,13 +2,14 @@ import { memo } from "react";
 import { Col, Row } from "../../common/styled";
 import NewsFeedItem from "./components/NewsFeedItem";
 import NewsFeedPagination from "./components/NewsFeedPagination";
+import { StyledPaginationContainer } from "./components/style";
 
 const NewsFeed = ({ news, page, setPage }) => {
 	const selectPage = (page) => setPage(page);
 
 	return (
 		<div>
-			<Row span={12} style={{ padding: "70px" }}>
+			<Row span={12}>
 				<Col span={6}>
 					{Array.isArray(news) &&
 						news.slice(0, 4).map((newsHit) => {
@@ -22,9 +23,9 @@ const NewsFeed = ({ news, page, setPage }) => {
 						})}
 				</Col>
 			</Row>
-			<Row>
+			<StyledPaginationContainer>
 				<NewsFeedPagination page={page} selectPage={selectPage} />
-			</Row>
+			</StyledPaginationContainer>
 		</div>
 	);
 };

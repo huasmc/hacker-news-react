@@ -62,6 +62,10 @@ export const StyledPaginationButton = styled.div`
 	background-color: #ffffff;
 	border: solid 1px #d9d9d9;
 	cursor: pointer;
+
+	@media (max-width: 768px) {
+		flex-direction: row;
+	}
 `;
 
 export const StyledPaginationButtonActive = styled.div`
@@ -71,9 +75,24 @@ export const StyledPaginationButtonActive = styled.div`
 	color: #ffffff;
 	width: 2rem;
 	height: 2rem;
-	margin: 0 0.5rem;
 	padding: 0.25rem;
 	border-radius: 6px;
 	background-color: #1890ff;
 	cursor: pointer;
+`;
+
+export const StyledPaginationContainer = styled.div`
+	display: flex;
+	grid-gap: 0.5rem;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	flex-direction: row;
+	padding-top: 4rem;
+
+	@media (max-width: 768px) {
+		flex-direction: row;
+		grid-gap: 0;
+	}
 `;
