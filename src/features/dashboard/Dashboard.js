@@ -5,14 +5,15 @@ import Dropdown from "../../common/dropdown/Dropdown";
 import { Col, Row } from "../../common/styled";
 import TabButton from "../../common/tabButton/TabButton";
 import { UI_STRINGS } from "../../common/UI_STRINGS";
-import { LSGetFavorites } from "../../service/localStorageService";
 import NewsFeed from "../newsFeed/NewsFeed";
 import { fetchFavoriteNews, fetchNews, selectNews } from "./DashboardSlice";
 import { DashboardContainer, TabButtonContainerStyles } from "./style";
 
 const Dashboard = () => {
 	const [activeTab, setActiveTab] = useState(UI_STRINGS.TAB_BUTTON.ALL);
-	const [selected, setSelected] = useState();
+	const [selected, setSelected] = useState(
+		JSON.parse(localStorage.getItem("selectedFilter"))
+	);
 	const [page, setPage] = useState(0);
 	const news = useSelector(selectNews);
 	const dispatch = useDispatch();

@@ -5,7 +5,7 @@ const Dropdown = ({ selected, setSelected, placeholder, options }) => {
 
 	const selectOption = (option) => {
 		setSelected(option);
-		localStorage.setItem("selectedFilter", option);
+		localStorage.setItem("selectedFilter", JSON.stringify(option));
 		setIsOpen(false);
 	};
 
