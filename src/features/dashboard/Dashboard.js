@@ -40,7 +40,7 @@ const Dashboard = () => {
 			</Row>
 			<Row>
 				<Col>
-					<div style={{ padding: "0 0 3vw 9vw" }}>
+					<div style={{ padding: "0 0 3vw 10vw" }}>
 						<Dropdown
 							placeholder={UI_STRINGS.DROPDOWN.PLACEHOLDER}
 							selected={selected}
