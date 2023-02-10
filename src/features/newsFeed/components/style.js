@@ -94,5 +94,24 @@ export const StyledPaginationContainer = styled.div`
 	@media (max-width: 768px) {
 		flex-direction: row;
 		grid-gap: 0;
+		padding-bottom: 2rem;
+	}
+`;
+
+export const StyledNewsFeedContainerLeft = styled.div`
+	padding-left: 70px;
+	width: 40%;
+	@media (max-width: 768px) {
+		width: 100%;
+		padding-left: 0;
+	}
+`;
+
+export const StyledNewsFeedContainerRight = styled.div`
+	padding-right: 70px;
+	width: 40%;
+	@media (max-width: 768px) {
+		width: 100%;
+		padding-right: 0;
 	}
 `;
