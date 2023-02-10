@@ -1,4 +1,4 @@
-import { memo, useEffect, useState } from "react";
+import { memo, useState } from "react";
 import Clock from "../../../assets/clock.svg";
 import HeartFilled from "../../../assets/heart-filled.svg";
 import HeartUnfilled from "../../../assets/heart-unfilled.svg";
@@ -64,6 +64,7 @@ const NewsFeedItem = ({ newsHit }) => {
 							src={HeartFilled}
 							alt=""
 							onClick={removeFavorite}
+							data-testid="heart-filled"
 						/>
 					) : (
 						<img
@@ -71,6 +72,7 @@ const NewsFeedItem = ({ newsHit }) => {
 							src={HeartUnfilled}
 							alt=""
 							onClick={onFavorite}
+							data-testid="heart-unfilled"
 						/>
 					)}
 				</StyledFavoriteButtonContainer>
