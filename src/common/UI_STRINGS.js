@@ -6,4 +6,7 @@ export const UI_STRINGS = {
 		ALL: "All",
 		MY_FAVES: "My faves",
 	},
+	DROPDOWN: {
+		PLACEHOLDER: "Select your news",
+	},
 };

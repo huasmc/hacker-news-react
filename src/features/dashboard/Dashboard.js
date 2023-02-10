@@ -1,5 +1,7 @@
 import { memo, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { StackDropdownConfig } from "../../common/config/StackDropdownConfig";
+import Dropdown from "../../common/dropdown/Dropdown";
 import { Col, Row } from "../../common/styled";
 import TabButton from "../../common/tabButton/TabButton";
 import { UI_STRINGS } from "../../common/UI_STRINGS";
@@ -29,6 +31,16 @@ const Dashboard = () => {
 							]}
 							active={activeTab}
 							setActive={setActiveTab}
+						/>
+					</div>
+				</Col>
+			</Row>
+			<Row>
+				<Col>
+					<div style={{ padding: "0 0 3vw 9vw" }}>
+						<Dropdown
+							placeholder={UI_STRINGS.DROPDOWN.PLACEHOLDER}
+							options={StackDropdownConfig}
 						/>
 					</div>
 				</Col>
