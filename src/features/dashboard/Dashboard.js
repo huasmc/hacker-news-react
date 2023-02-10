@@ -49,8 +49,7 @@ const Dashboard = () => {
 					</div>
 				</Col>
 			</Row>
-			{/* {activeTab === UI_STRINGS.TAB_BUTTON.ALL && ( */}
-			<div>
+			{activeTab === UI_STRINGS.TAB_BUTTON.ALL && (
 				<Row>
 					<Col>
 						<div style={{ padding: "0 0 3vw 10vw" }}>
@@ -63,12 +62,8 @@ const Dashboard = () => {
 						</div>
 					</Col>
 				</Row>
-				<NewsFeed news={news} page={page} setPage={setPage} />
-			</div>
-			{/* )} */}
-			{/* {activeTab === UI_STRINGS.TAB_BUTTON.MY_FAVES && (
-				<NewsFeed news={getFavorites()} page={page} setPage={setPage} />
-			)} */}
+			)}
+			<NewsFeed news={news} page={page} setPage={setPage} />
 		</DashboardContainer>
 	);
 };
