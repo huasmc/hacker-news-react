@@ -23,23 +23,19 @@ const NewsFeedPagination = ({ page, selectPage }) => {
 				.slice(page, page + 9)
 				.map((pageNumber) => {
 					return (
-						<>
+						<div key={pageNumber}>
 							{page !== pageNumber ? (
-								<StyledPaginationButton
-									key={pageNumber}
-									onClick={() => selectPage(pageNumber)}
-								>
+								<StyledPaginationButton onClick={() => selectPage(pageNumber)}>
 									{pageNumber + 1}
 								</StyledPaginationButton>
 							) : (
 								<StyledPaginationButtonActive
-									key={pageNumber}
 									onClick={() => selectPage(pageNumber)}
 								>
 									{pageNumber + 1}
 								</StyledPaginationButtonActive>
 							)}
-						</>
+						</div>
 					);
 				})}
 			<StyledPaginationButton onClick={nextPage}>

@@ -21,7 +21,10 @@ const dashboardSlice = createSlice({
 				payload: { hits, nbPages },
 			} = action;
 			state.pages = nbPages;
-			state.news = hits;
+			console.log(hits);
+			state.news = hits.filter(
+				(hit) => hit.author && hit.story_title && hit.story_url && hit.created_at
+			);
 		});
 	},
 });
