@@ -9,12 +9,13 @@ import { DashboardContainer, TabButtonContainerStyles } from "./style";
 
 const Dashboard = () => {
 	const [activeTab, setActiveTab] = useState(UI_STRINGS.TAB_BUTTON.ALL);
+	const [page, setPage] = useState(0);
 	const news = useSelector(selectNews);
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		dispatch(fetchNews({ query: "angular", page: 0, hitsPerPage: 8 }));
-	}, [dispatch]);
+		dispatch(fetchNews({ query: "angular", page, hitsPerPage: 8 }));
+	}, [page, dispatch]);
 
 	return (
 		<DashboardContainer>
@@ -32,7 +33,7 @@ const Dashboard = () => {
 					</div>
 				</Col>
 			</Row>
-			<NewsFeed news={news} />
+			<NewsFeed news={news} page={page} setPage={setPage} />
 		</DashboardContainer>
 	);
 };

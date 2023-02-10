@@ -13,18 +13,19 @@ export const fetchNews = createAsyncThunk("news", async (queryParams) => {
 
 const dashboardSlice = createSlice({
 	name: "dashboard",
-	initialState: { news: [] },
+	initialState: { news: [], pages: 0 },
 	reducers: {},
 	extraReducers: (builder) => {
 		builder.addCase(fetchNews.fulfilled, (state, action) => {
 			const {
-				payload: { hits },
+				payload: { hits, nbPages },
 			} = action;
-			console.log(hits);
+			state.pages = nbPages;
 			state.news = hits;
 		});
 	},
 });
 
 export const selectNews = (state) => state.dashboard.news;
+export const selectPages = (state) => state.dashboard.pages;
 export default dashboardSlice.reducer;

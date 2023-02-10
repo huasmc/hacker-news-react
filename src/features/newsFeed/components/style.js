@@ -50,3 +50,30 @@ export const StyledFavoriteButtonContainer = styled.div`
 	border-right: 1px solid #c1c1c1;
 	border-radius: 6px;
 `;
+
+export const StyledPaginationButton = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 2rem;
+	height: 2rem;
+	padding: 0.25rem;
+	border-radius: 6px;
+	background-color: #ffffff;
+	border: solid 1px #d9d9d9;
+	cursor: pointer;
+`;
+
+export const StyledPaginationButtonActive = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #ffffff;
+	width: 2rem;
+	height: 2rem;
+	margin: 0 0.5rem;
+	padding: 0.25rem;
+	border-radius: 6px;
+	background-color: #1890ff;
+	cursor: pointer;
+`;
