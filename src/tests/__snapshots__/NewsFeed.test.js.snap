@@ -1,0 +1,211 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NewsFeed component should render correctly with empty news array 1`] = `
+<div>
+  <div>
+    <div
+      class="sc-bcXHqe ROMsa"
+      span="12"
+    >
+      <div
+        class="sc-bcXHqe ROMsa"
+      >
+        <h2>
+          This page has no valid news
+        </h2>
+      </div>
+      <div
+        class="sc-jrcTuL gWbcAX"
+      >
+        <div
+          class="sc-gswNZR doXCWo"
+          span="6"
+        />
+      </div>
+      <div
+        class="sc-kDvujY dyApoO"
+      >
+        <div
+          class="sc-gswNZR doXCWo"
+          span="6"
+        />
+      </div>
+    </div>
+    <div
+      class="sc-pyfCe kWIher"
+    >
+      <div
+        class="sc-iBYQkv fusTzu"
+      >
+        <span
+          style="font-weight: 700; cursor: pointer;"
+        >
+          &lt;
+        </span>
+      </div>
+      <div
+        class="sc-iBYQkv fusTzu"
+      >
+        <span
+          data-testid="next-page"
+          style="font-weight: 700; cursor: pointer;"
+        >
+          &gt;
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`NewsFeed component should render correctly with news array of length 2 1`] = `
+<div>
+  <div>
+    <div
+      class="sc-bcXHqe ROMsa"
+      span="12"
+    >
+      <div
+        class="sc-jrcTuL gWbcAX"
+      >
+        <div
+          class="sc-gswNZR doXCWo"
+          span="6"
+        >
+          <div
+            class="sc-eDvSVe inBQGM"
+          >
+            <div
+              class="news-row"
+              data-testid="news-item"
+            >
+              <div
+                class="sc-jSUZER bfLHfq"
+              >
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <img
+                          alt=""
+                          src="clock.svg"
+                        />
+                      </td>
+                      <td
+                        class="news-timestamp"
+                      >
+                        <span
+                          class="sc-dkrFOg jkYCxt"
+                        >
+                          NaN hour ago by author
+                        </span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <span
+                  class="sc-hLBbgP bLLQyC"
+                >
+                   
+                  Some news title
+                </span>
+              </div>
+              <div
+                class="sc-gKPRtg EMaks"
+              >
+                <img
+                  alt=""
+                  class="favorite-button"
+                  data-testid="heart-unfilled"
+                  src="heart-unfilled.svg"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="sc-eDvSVe inBQGM"
+          >
+            <div
+              class="news-row"
+              data-testid="news-item"
+            >
+              <div
+                class="sc-jSUZER bfLHfq"
+              >
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <img
+                          alt=""
+                          src="clock.svg"
+                        />
+                      </td>
+                      <td
+                        class="news-timestamp"
+                      >
+                        <span
+                          class="sc-dkrFOg jkYCxt"
+                        >
+                          NaN hour ago by author
+                        </span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <span
+                  class="sc-hLBbgP bLLQyC"
+                >
+                   
+                  Another news title
+                </span>
+              </div>
+              <div
+                class="sc-gKPRtg EMaks"
+              >
+                <img
+                  alt=""
+                  class="favorite-button"
+                  data-testid="heart-unfilled"
+                  src="heart-unfilled.svg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-kDvujY dyApoO"
+      >
+        <div
+          class="sc-gswNZR doXCWo"
+          span="6"
+        />
+      </div>
+    </div>
+    <div
+      class="sc-pyfCe kWIher"
+    >
+      <div
+        class="sc-iBYQkv fusTzu"
+      >
+        <span
+          style="font-weight: 700; cursor: pointer;"
+        >
+          &lt;
+        </span>
+      </div>
+      <div
+        class="sc-iBYQkv fusTzu"
+      >
+        <span
+          data-testid="next-page"
+          style="font-weight: 700; cursor: pointer;"
+        >
+          &gt;
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

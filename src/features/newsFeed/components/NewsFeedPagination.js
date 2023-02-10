@@ -39,7 +39,12 @@ const NewsFeedPagination = ({ page, selectPage }) => {
 					);
 				})}
 			<StyledPaginationButton onClick={nextPage}>
-				<span style={{ fontWeight: "700", cursor: "pointer" }}>{">"}</span>
+				<span
+					style={{ fontWeight: "700", cursor: "pointer" }}
+					data-testid="next-page"
+				>
+					{">"}
+				</span>
 			</StyledPaginationButton>
 		</>
 	);

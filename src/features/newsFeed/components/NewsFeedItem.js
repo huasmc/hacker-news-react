@@ -39,7 +39,7 @@ const NewsFeedItem = ({ newsHit }) => {
 
 	return (
 		<StyledNewsItemContainer>
-			<div className="news-row">
+			<div className="news-row" data-testid="news-item">
 				<StyledNewsItemData onClick={openNewsLink}>
 					<table>
 						<tbody>

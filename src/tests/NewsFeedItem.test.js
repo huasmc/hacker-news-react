@@ -1,7 +1,7 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
-import NewsFeedItem from "./NewsFeedItem";
-import formatNewsHour from "../../../utils/formatNewsHour";
+import NewsFeedItem from "../features/newsFeed/components/NewsFeedItem";
+import formatNewsHour from "../utils/formatNewsHour";
 
 const mockNewsHit = {
 	created_at_i: 1595559344,
@@ -16,7 +16,7 @@ describe("NewsFeedItem", () => {
 		expect(getByText("Test Story")).toBeInTheDocument();
 		expect(
 			getByText(formatNewsHour(mockNewsHit.created_at_i))
-		).toBeInTheDocument(); // Assumes the formatNewsHour function is working correctly
+		).toBeInTheDocument();
 	});
 
 	it("opens the news link on click", () => {
