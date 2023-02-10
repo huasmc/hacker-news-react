@@ -1,5 +1,5 @@
 import React from "react";
-import { render, fireEvent } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import NewsFeed from "../features/newsFeed/NewsFeed";
 import { Provider } from "react-redux";
 import { store } from "../app/store";

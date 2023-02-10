@@ -1,6 +1,6 @@
 import React from "react";
 import { screen, render } from "@testing-library/react";
-import Header from "./Header";
+import Header from "../features/header/Header";
 
 describe("App", () => {
 	test("it renders", () => {
