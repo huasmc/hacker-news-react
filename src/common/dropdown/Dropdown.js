@@ -1,8 +1,7 @@
 import { memo, useState } from "react";
 
-const Dropdown = ({ placeholder, options }) => {
+const Dropdown = ({ selected, setSelected, placeholder, options }) => {
 	const [isOpen, setIsOpen] = useState(false);
-	const [selected, setSelected] = useState(options[0]);
 
 	const selectOption = (option) => {
 		setSelected(option);
@@ -22,7 +21,6 @@ const Dropdown = ({ placeholder, options }) => {
 									style={{ width: "22px", height: "22px" }}
 								/>
 							</td>
-
 							<td>
 								<span>{selected.title}</span>
 							</td>

@@ -11,13 +11,16 @@ import { DashboardContainer, TabButtonContainerStyles } from "./style";
 
 const Dashboard = () => {
 	const [activeTab, setActiveTab] = useState(UI_STRINGS.TAB_BUTTON.ALL);
+	const [selected, setSelected] = useState(StackDropdownConfig[0]);
 	const [page, setPage] = useState(0);
 	const news = useSelector(selectNews);
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		dispatch(fetchNews({ query: "angular", page, hitsPerPage: 8 }));
-	}, [page, dispatch]);
+		dispatch(
+			fetchNews({ query: selected.title.toLowerCase(), page, hitsPerPage: 8 })
+		);
+	}, [page, selected, dispatch]);
 
 	return (
 		<DashboardContainer>
@@ -40,6 +43,8 @@ const Dashboard = () => {
 					<div style={{ padding: "0 0 3vw 9vw" }}>
 						<Dropdown
 							placeholder={UI_STRINGS.DROPDOWN.PLACEHOLDER}
+							selected={selected}
+							setSelected={setSelected}
 							options={StackDropdownConfig}
 						/>
 					</div>
