@@ -11,10 +11,14 @@ import {
 } from "./style";
 
 const NewsFeedItem = ({ newsHit }) => {
+	const openNewsLink = () => {
+		window.open(newsHit.story_url, "_blank");
+	};
+
 	return (
 		<StyledNewsItemContainer>
 			<div className="news-row">
-				<StyledNewsItemData>
+				<StyledNewsItemData onClick={openNewsLink}>
 					<table>
 						<tbody>
 							<tr>
