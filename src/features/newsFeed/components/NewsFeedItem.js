@@ -13,7 +13,7 @@ import {
 const NewsFeedItem = ({ newsHit }) => {
 	return (
 		<StyledNewsItemContainer>
-			<div style={{ display: "grid", gridTemplateColumns: "3.5fr 0.5fr" }}>
+			<div className="news-row">
 				<StyledNewsItemData>
 					<table>
 						<tbody>
