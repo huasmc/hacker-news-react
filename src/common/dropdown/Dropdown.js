@@ -13,18 +13,22 @@ const Dropdown = ({ selected, setSelected, placeholder, options }) => {
 			<button className="dropdown-toggle" onClick={() => setIsOpen(!isOpen)}>
 				<table>
 					<tbody>
-						<tr style={{ width: "100%" }}>
-							<td>
-								<img
-									src={selected.icon}
-									alt=""
-									style={{ width: "22px", height: "22px" }}
-								/>
-							</td>
-							<td>
-								<span>{selected.title}</span>
-							</td>
-						</tr>
+						{selected ? (
+							<tr style={{ width: "100%" }}>
+								<td>
+									<img
+										src={selected.icon}
+										alt=""
+										style={{ width: "22px", height: "22px" }}
+									/>
+								</td>
+								<td>
+									<span>{selected.title}</span>
+								</td>
+							</tr>
+						) : (
+							placeholder
+						)}
 					</tbody>
 				</table>
 			</button>

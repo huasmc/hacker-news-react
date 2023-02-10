@@ -11,14 +11,18 @@ import { DashboardContainer, TabButtonContainerStyles } from "./style";
 
 const Dashboard = () => {
 	const [activeTab, setActiveTab] = useState(UI_STRINGS.TAB_BUTTON.ALL);
-	const [selected, setSelected] = useState(StackDropdownConfig[0]);
+	const [selected, setSelected] = useState();
 	const [page, setPage] = useState(0);
 	const news = useSelector(selectNews);
 	const dispatch = useDispatch();
 
 	useEffect(() => {
 		dispatch(
-			fetchNews({ query: selected.title.toLowerCase(), page, hitsPerPage: 8 })
+			fetchNews({
+				query: selected && selected.title.toLowerCase(),
+				page,
+				hitsPerPage: 8,
+			})
 		);
 	}, [page, selected, dispatch]);
 
