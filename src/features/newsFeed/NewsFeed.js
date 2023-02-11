@@ -14,7 +14,7 @@ const NewsFeed = ({ news, page, setPage }) => {
 
 	return (
 		<div>
-			<Row span={12} style={{ minHeight: "570px" }}>
+			<Row span={12} style={{ minHeight: "600px" }}>
 				{Array.isArray(news) && news.length === 0 && (
 					<Row>
 						<h2>{UI_STRINGS.NO_VALID_NEWS}</h2>

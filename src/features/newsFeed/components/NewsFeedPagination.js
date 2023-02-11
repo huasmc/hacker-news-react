@@ -2,7 +2,6 @@ import { StyledPaginationButton, StyledPaginationButtonActive } from "./style";
 import { memo } from "react";
 import { useSelector } from "react-redux";
 import { selectPages } from "../../dashboard/DashboardSlice";
-
 const NewsFeedPagination = ({ page, selectPage }) => {
 	const numberOfPages = useSelector(selectPages);
 
@@ -14,13 +13,16 @@ const NewsFeedPagination = ({ page, selectPage }) => {
 		if (page < numberOfPages) selectPage(page + 1);
 	};
 
+	const start = Math.max(0, Math.min(page - 4, numberOfPages - 9));
+	const end = Math.min(numberOfPages, start + 9);
+
 	return (
 		<>
 			<StyledPaginationButton onClick={previousPage}>
 				<span style={{ fontWeight: "700", cursor: "pointer" }}>{"<"}</span>
 			</StyledPaginationButton>
 			{Array.from(Array(numberOfPages).keys())
-				.slice(page, page + 9)
+				.slice(start, end)
 				.map((pageNumber) => {
 					return (
 						<div key={pageNumber}>
