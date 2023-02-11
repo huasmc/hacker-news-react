@@ -19,8 +19,9 @@ export const fetchFavoriteNews = createAsyncThunk(
 			const response = LSGetFavorites();
 			const startIndex = (page - 1) * 8;
 			const endIndex = startIndex + 8;
-			const items = response.slice(startIndex, endIndex);
-			return { hits: items, nbPages: Math.ceil(response.length / 8) };
+			const items = response ? response.slice(startIndex, endIndex) : [];
+			const nbPages = response ? Math.ceil(response.length / 8) : 0;
+			return { hits: items, nbPages };
 		} catch (error) {
 			throw new Error(error);
 		}
