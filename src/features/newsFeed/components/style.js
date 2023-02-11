@@ -79,6 +79,7 @@ export const StyledPaginationButtonActive = styled.div`
 	border-radius: 6px;
 	background-color: #1890ff;
 	cursor: pointer;
+	user-select: none;
 `;
 
 export const StyledPaginationContainer = styled.div`
@@ -90,6 +91,7 @@ export const StyledPaginationContainer = styled.div`
 	box-sizing: border-box;
 	flex-direction: row;
 	padding-top: 4rem;
+	user-select: none;
 
 	@media (max-width: 768px) {
 		flex-direction: row;
