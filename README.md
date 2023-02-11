@@ -2,6 +2,14 @@ This application displays the most recent news from Hacker News API. It allows t
 
 The application is deployed [here](https://euphonious-donut-76ef9e.netlify.app/)
 
+## Main View
+
+![main-view](https://i.ibb.co/HHfbJZY/hacker-news-main.png)
+
+## Favorites View
+
+![favorites-view](https://i.ibb.co/m5xwGnH/hacker-news-faves.png)
+
 ## Requirements Checklist
 
 ### Stack
