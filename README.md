@@ -48,6 +48,16 @@ The application is deployed [here](https://euphonious-donut-76ef9e.netlify.app/)
 3. To run tests use `npm run test`
 4. Run the app with `npm start`
 
+## Technical specifications
+
+- react: ```v18.2.0```
+- react-redux: ```v8.0.5```
+- reduxjs/toolkit: ```v1.9.2```
+- jest-dom: ```v5.16.5```
+- enzyme: ```v3.11.0```
+- redux-mock-store: ```v1.5.4```
+- styled-components: ```v5.3.6```
+
 ## Things that can be improved
 
 - More test coverage
