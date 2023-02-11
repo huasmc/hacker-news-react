@@ -2,23 +2,31 @@ This application displays the most recent news from Hacker News API. It allows t
 
 The application is deployed [here](https://euphonious-donut-76ef9e.netlify.app/)
 
+## Main View
+
+![main-view](https://i.ibb.co/HHfbJZY/hacker-news-main.png)
+
+## Favorites View
+
+![favorites-view](https://i.ibb.co/m5xwGnH/hacker-news-faves.png)
+
 ## Requirements Checklist
 
-## Stack
+### Stack
 
 - [x] Latest version of React 
 - [x] No third-party libraries for UI components (HTML/CSS)
 - [x] Styled components or CSS Stylesheets
 - [x] Deployment on Netlify from Git repository
 
-## API
+### API
 
 - [x] Usage of Hacker News API
 - [x] Framework filter dropdown
 - [x] Server side pagination
 - [x] Discard posts without attributes ```author, story_title, story_url, created_at```
 
-## Functionality
+### Functionality
 
 - [x] Selected filter persisted in local storage
 - [x] Favorite posts persisted in local storage
@@ -27,7 +35,7 @@ The application is deployed [here](https://euphonious-donut-76ef9e.netlify.app/)
 - [x] Clicking on row opens the post in a new tab ```story_url```
 - [x] Change row and row's children opacity on hover
 
-## Bonus
+### Bonus
 
 - [x] Implemented unit-testing
 - [ ] Good use of Typescript
